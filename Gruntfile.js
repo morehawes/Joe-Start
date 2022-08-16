@@ -18,7 +18,9 @@ module.exports = function(grunt) {
 	var joe_files = grunt.file.expand({ filter: "isFile",	cwd: joe_inc_path }, ["*.php"]);	
 	var app_files = grunt.file.expand({	filter: "isFile",	cwd: app_path }, ["*.php"]);	
 
-	if(! joe_files.length || ! app_files.length) {
+	if(! joe_files.length) {
+		console.log('Joe is missing :-/');
+		
 		return;
 	}
 	
